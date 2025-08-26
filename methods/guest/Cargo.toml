@@ -1,0 +1,13 @@
+[package]
+name = "method"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+core = { path = "../../core" }
+risc0-zkvm = { version = "^3.0.1", default-features = false, features = [
+    'std',
+] }
+image = "0.25.6"

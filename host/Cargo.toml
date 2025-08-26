@@ -1,0 +1,11 @@
+[package]
+name = "host"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+core = { path = "../core" }
+methods = { path = "../methods" }
+risc0-zkvm = { version = "^3.0.1", default-features = false, features = [
+    "prove",
+] }

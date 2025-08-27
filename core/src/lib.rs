@@ -28,7 +28,7 @@ pub struct Output {
 }
 
 impl Output {
-    pub fn save_to_file(&self, fname: &str) {
+    pub fn save_image_to_file(&self, fname: &str) {
         let mut file = File::create(fname).expect("Could not create file!");
 
         file.write_all(&self.image)
@@ -65,12 +65,10 @@ impl Proof {
         self.receipt.verify(self.id).expect("Verification failed");
     }
 
-    pub fn print_journal(&self) {
-        let output: Output = self
-            .receipt
+    pub fn get_journal(&self) -> Output {
+        self.receipt
             .journal
             .decode()
-            .expect("Could not decode journal");
-        println!("Journal output: {:?}", output);
+            .expect("Could not decode journal")
     }
 }

@@ -1,9 +1,12 @@
 use core::{Input, Proof};
-use methods::{METHOD_ELF, METHOD_ID};
 use risc0_zkvm::{default_prover, ExecutorEnv, ProverOpts};
 use std::time::Instant;
 
-const INPUT_FILE: &str = "res/sample_10x10_rgb.tif";
+#[allow(unused_imports)]
+use methods::{GRAYSCALE_ELF, GRAYSCALE_ID, ROTATE90_ELF, ROTATE90_ID};
+
+const INPUT_FILE: &str = "res/sample_100x100_rgb.png";
+const OUTPUT_FILE: &str = "res/sample_100x100_rotate90.png";
 const PROOF_FILE: &str = "res/proof.json";
 const PROOF_G16_FILE: &str = "res/proof_g16.json";
 
@@ -35,11 +38,11 @@ fn prove() {
 
     let prover = default_prover();
 
-    let prove_info = prover.prove(env, METHOD_ELF).expect("Proving failed");
+    let prove_info = prover.prove(env, ROTATE90_ELF).expect("Proving failed");
 
     let receipt = prove_info.receipt;
 
-    let proof = Proof::new(receipt, METHOD_ID);
+    let proof = Proof::new(receipt, ROTATE90_ID);
 
     proof.save_as_json(PROOF_FILE);
 }
@@ -70,5 +73,7 @@ fn verify() {
 
     proof.verify();
 
-    proof.print_journal();
+    let output = proof.get_journal();
+
+    output.save_image_to_file(OUTPUT_FILE);
 }

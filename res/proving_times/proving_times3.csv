@@ -1,0 +1,4 @@
+Input File,Identity Proving Time (ms),Identity (with encode/decode) Proving Time (ms)
+res/sample_100x100_rgb.png,107912,809457
+res/sample_200x200_rgb.png,543579,3068038
+res/sample_400x400_rgb.png,1661870,11632427

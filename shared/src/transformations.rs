@@ -41,6 +41,10 @@ pub enum Transformation {
         width: u32,
         height: u32,
     },
+    Resize2 {
+        width: u32,
+        height: u32,
+    },
 }
 
 impl Transformation {
@@ -95,6 +99,10 @@ impl Transformation {
 
     pub fn resize(width: u32, height: u32) -> Self {
         Self::Resize { width, height }
+    }
+
+    pub fn resize2(width: u32, height: u32) -> Self {
+        Self::Resize2 { width, height }
     }
 
     pub fn with_region(mut self, region: Region) -> Self {

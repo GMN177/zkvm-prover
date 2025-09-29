@@ -1,0 +1,2 @@
+Input File,Hash Proving Time (ms),Resize Proving Time (ms),Grayscale Proving Time (ms),Crop Proving Time (ms)
+res/sample_800x800_rgb.png,2914452,128693465,32703074,15139223

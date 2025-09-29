@@ -137,6 +137,12 @@ impl Layer {
                         .resize(width, height, image::imageops::FilterType::Triangle);
                 Ok(())
             }
+            Transformation::Resize2 { width, height } => {
+                self.image = self
+                    .image
+                    .resize(width, height, image::imageops::FilterType::Nearest);
+                Ok(())
+            }
         }
     }
 

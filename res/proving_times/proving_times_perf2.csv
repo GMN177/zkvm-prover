@@ -1,0 +1,5 @@
+Input File,Crop Proving Time (ms)
+res/sample_100x100_rgb.png,254007
+res/sample_200x200_rgb.png,804309
+res/sample_400x400_rgb.png,3119951
+res/sample_800x800_rgb.png,12254916

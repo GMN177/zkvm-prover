@@ -1,0 +1,6 @@
+Input File,Hash Proving Time (ms)
+res/sample_100x100_rgb.png,64198
+res/sample_200x200_rgb.png,65796
+res/sample_400x400_rgb.png,82754
+res/sample_800x800_rgb.png,103729
+res/sample_1600x1600_rgb.png,178339

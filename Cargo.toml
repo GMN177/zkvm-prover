@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["shared", "host", "methods"]
+members = ["shared", "host", "methods", "plot", "prof"]
 
 # Always optimize; building and running the guest takes much longer without optimization.
 [profile.dev]
